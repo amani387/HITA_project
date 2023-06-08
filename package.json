@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "axios": "^1.4.0",
+    "react-icons": "^4.9.0"
+  }
+}
