@@ -1,17 +1,45 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const AdminSchema = new Schema({
+const auth = new Schema(
+  {
+    Posting: {
+      type: Boolean,
+    },
+    Editing: {
+      type: Boolean,
+    },
+    Deleting: {
+      type: Boolean,
+    },
+  },
+  {
+    _id: false,
+  }
+);
+
+const AdminSchema = new Schema(
+  {
     _id: mongoose.Schema.Types.ObjectId,
     username: {
-        type: String
+      type: String,
     },
-    pwd:{
-        type: String
-    }
-}, {
-    collection: 'Admin'
-})
+    profileImage: {
+      type: String,
+    },
+    pwd: {
+      type: String,
+    },
+    role: {
+      type: String,
+    },
+    // authority: {
+    //   type: auth,
+    // },
+  },
+  {
+    collection: "Admin",
+  }
+);
 
-
-module.exports=mongoose.model("Admin",AdminSchema)
+module.exports = mongoose.model("Admin", AdminSchema);
